@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import Steps from "@/components/Steps/Steps";
-
+import RestaurantCard from "@/components/RestaurantCard";
 
 
 export default function Home() {
@@ -26,7 +26,7 @@ export default function Home() {
         <div className={styles.restaurantsContent}>
           <h2>Restaurants</h2>
           <div className={styles.restaurantGrid}>
-            
+            <RestaurantCard />
           </div>
         </div>
       </section>
