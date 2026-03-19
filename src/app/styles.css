@@ -4,7 +4,7 @@
   width: 100vw;
   height: 400px;
   margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
+ margin-right: calc(-50vw + 50%);
 }
 
 .image {
@@ -15,8 +15,8 @@
 
 .mainWrapper {
   background: #f6f6f6;
-  margin-top: -4rem;
-  padding: 2rem 0;
+  margin-top: -2rem;  /* MODIFIE */
+  padding: 3rem 0; /* MODIFIE */
   position: relative;
   border-radius: 2rem 2rem 0 0;
 }
@@ -33,7 +33,7 @@
 }
 
 .contentWrapper {
-  max-width: 1080px;
+  max-width: 634px;  /* MODIFIE */
   margin: 0 auto;
   padding: 0 1rem;
   position: relative;
@@ -76,6 +76,9 @@
   transition: transform 0.2s, box-shadow 0.2s;
   display: block;
   margin: 0 auto;
+  font-weight: 500;
+  font-size:16px;
+  font-family:'Roboto';
 }
 
 .orderButton:hover {
@@ -129,6 +132,7 @@
   font-size: 1.75rem;
   margin: 0;
   text-align: center;
+  font-weight: 400; /* MODIFIE */
 }
 
 .favoriteButton {

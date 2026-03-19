@@ -1,0 +1,41 @@
+.notfoundWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.notfoundMessage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.notfoundTitle {
+    padding-bottom: 0.5em;
+    margin-bottom: .5em;
+    border-bottom: 1px solid black;
+}
+
+.notfoundParagraph{
+    font-family: var(--font-shrikhand);
+    margin-bottom: 1em;
+}
+
+.returnToHome {
+    padding: 1em;
+    border-radius: 2em;
+    color: white;
+    background: black;
+    cursor: pointer;
+    margin-top: 1em;
+    border:none;
+    transition: transform .5s ease;
+    font-weight: bold;
+
+}
+
+.returnToHome:hover {
+    transform: scale(1.05)
+}
