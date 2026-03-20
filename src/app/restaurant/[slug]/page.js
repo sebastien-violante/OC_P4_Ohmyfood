@@ -1,14 +1,17 @@
+'use client'
 import data from '@/data/restaurants.json'
 import Image from 'next/image'
 import MenuItem from '@/components/MenuItem/MenuItem'
 import { notFound } from 'next/navigation'
-import styles from '@/app/layout.module.css'
+import { useLikes } from '@/app/context/LikesContext'
+import { use } from 'react'
 
-export default async function RestaurantDetails({params}) {
+export default function RestaurantDetails({params}) {
 
-    const { slug } = await params
+    const { slug } = use(params)
     const restaurants  = data.restaurants
     const restaurant = restaurants.find(restaurant => restaurant.slug === slug)
+    const { toggleLike, isLiked } = useLikes();
 
     if (!restaurant) {
         notFound();
@@ -17,16 +20,17 @@ export default async function RestaurantDetails({params}) {
     return (
         <>
             <div className="heroImage">
-                <Image fill className="image" src={restaurant.image} alt={restaurant.slug}/>
+                <Image fill className="image" src={restaurant.image} alt={restaurant.name} priority/>
             </div>
             <div className="mainWrapper">
                 <div className="contentWrapper">
                     <div className="menu">
                         <div className="restaurantHeader">
                             <h1 className="restaurantName">{restaurant.name}</h1>
-                            <button className="favoriteButton">
-                                <img className="heartIcon" src="/Like.svg" alt="Ajouter aux favoris" />
-                            </button>
+                            <div onClick={() => toggleLike(slug)} className="heart">
+                                {!isLiked(slug) && <Image height={22} width={22} src="/icons/like.svg" alt="ajouter aux favoris" />}
+                                {isLiked(slug) && <Image height={22} width={22} src="/icons/liked.png" alt="ajouter aux favoris" />}
+                            </div>
                         </div>
                         <div>
                             <div className="sectionTitle">Entrées</div>

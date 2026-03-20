@@ -7,6 +7,7 @@ import styles from "./layout.module.css";
 import Header from "@/components/Header/Header";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUtensils, faHandshakeAngle } from "@fortawesome/free-solid-svg-icons";
+import { LikeProvider } from "./context/LikesContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,15 +34,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="fr">
       <body className={`${geistSans.variable} ${geistMono.variable} ${shrikhand.variable}`}>
-        <div className={styles.page}>
+        <LikeProvider>
+          <div className={styles.page}>
           <Header />
-
           <main className={styles.mainContent}>
             <div className={styles.contentWrapper}>
               {children}
             </div>
           </main>
-
           <footer className={styles.footer}>
             <nav>
               <a href="#" className={styles.footerLink}>
@@ -60,6 +60,7 @@ export default function RootLayout({ children }) {
             </Link>
           </footer>
         </div>
+        </LikeProvider>
       </body>
     </html>
   );
