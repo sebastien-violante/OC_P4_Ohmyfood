@@ -4,13 +4,12 @@
   width: 100vw;
   height: 400px;
   margin-left: calc(-50vw + 50%);
- margin-right: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
 }
 
 .image {
   object-fit: cover;
-  width: 100% !important;
-  height: 100% !important;
+ 
 }
 
 .mainWrapper {
@@ -146,15 +145,8 @@
   align-items: center;
 }
 
-.heartIcon {
-  width: 24px;
-  height: 24px;
-  color: #353535;
-  transition: color 0.2s, fill 0.2s;
-}
-
-.liked .heartIcon {
-  color: transparent;
+.heart {
+  cursor: pointer;
 }
 
 /* Menu Item Component */

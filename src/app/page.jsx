@@ -23,7 +23,7 @@ export default function Home() {
         </div>
       </section>
 
-      <Steps />
+      <Steps/>
 
       <section className={styles.restaurants}>
         <div className={styles.restaurantsContent}>
