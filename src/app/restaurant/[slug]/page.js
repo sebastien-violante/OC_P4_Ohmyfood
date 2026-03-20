@@ -5,17 +5,31 @@ import MenuItem from '@/components/MenuItem/MenuItem'
 import { notFound } from 'next/navigation'
 import { useLikes } from '@/app/context/LikesContext'
 import { use } from 'react'
+import { useEffect, useState } from 'react'
 
 export default function RestaurantDetails({params}) {
 
     const { slug } = use(params)
-    const restaurants  = data.restaurants
-    const restaurant = restaurants.find(restaurant => restaurant.slug === slug)
+    const [restaurant, setRestaurant] = useState(null)
     const { toggleLike, isLiked } = useLikes();
 
-    if (!restaurant) {
-        notFound();
+    async function getRestaurant(slug){
+        const restaurants = data.restaurants
+        const restaurant = restaurants.find(restaurant => restaurant.slug === slug)
+        if (!restaurant) {
+            notFound();
+        }
+        return restaurant
     }
+    useEffect(() => {
+        async function getData() {
+            const restaurant = await getRestaurant(slug)
+            setRestaurant(restaurant)
+        }
+        getData()
+    },[])
+    
+    if(!restaurant) return
 
     return (
         <>

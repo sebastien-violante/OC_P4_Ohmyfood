@@ -1,5 +1,4 @@
 "use client"
-import { useState } from "react"
 import Link from 'next/link'
 import styles from './RestaurantCard.module.css'
 import Image from 'next/image'
