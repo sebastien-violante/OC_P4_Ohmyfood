@@ -21,7 +21,7 @@ export default function RestaurantCard({name, location, image, slug}) {
     return (
         <Link href={`/restaurant/${slug}`} className={styles.card}>
             <div className={styles.cardPicture}>
-                <Image src={image} alt={slug} height={200} width={490} className={styles.picture}/>
+                <Image src={image} alt={name} height={200} width={490} className={styles.picture}/>
             </div>
             <div className={styles.cardId}>
                 <div>

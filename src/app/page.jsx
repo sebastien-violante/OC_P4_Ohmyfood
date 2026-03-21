@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import Steps from "@/components/Steps/Steps";
-import RestaurantCard from "@/components/RestaurantCard";
+import RestaurantCard from "@/components/RestaurantCard/RestaurantCard";
 import data from '../data/restaurants.json'
 
 export default function Home() {
