@@ -10,7 +10,7 @@ async function getRestaurant(slug) {
 
 export default async function Restaurant({params}) {
 
-    const { slug } = params
+    const { slug } = await params
     const restaurant = await(getRestaurant(slug))
         
     if(!restaurant) {

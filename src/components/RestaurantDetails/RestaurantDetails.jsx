@@ -25,19 +25,19 @@ export default function RestaurantDetails({image, name, menu, slug}) {
                         <div>
                             <div className="sectionTitle">Entrées</div>
                             {menu.entrées.map((entree,index) => (
-                                <MenuItem key={index} item={entree}/>
+                                <MenuItem key={`${index}-${entree}`} item={entree}/>
                             ))}
                         </div>
                         <div>
                                 <div className="sectionTitle">Plats</div>
                             {menu.plats.map((plat,index) => (
-                                <MenuItem key={index} item={plat}/>
+                                <MenuItem key={`${index}-${plat}`} item={plat}/>
                             ))}
                         </div>
                         <div>
                             <div className="sectionTitle">Desserts</div>
                             {menu.desserts.map((dessert,index) => (
-                                <MenuItem key={index} item={dessert}/>
+                                <MenuItem key={`${index}-${dessert}`} item={dessert}/>
                             ))}
                         </div>
                     </div>
