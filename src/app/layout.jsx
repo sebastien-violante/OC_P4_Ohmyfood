@@ -9,16 +9,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUtensils, faHandshakeAngle } from "@fortawesome/free-solid-svg-icons";
 import { LikeProvider } from "./context/LikesContext";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 const shrikhand = Shrikhand({
   weight: '400',
   variable: '--font-shrikhand',
@@ -33,14 +23,15 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="fr">
-      <body className={`${geistSans.variable} ${geistMono.variable} ${shrikhand.variable}`}>
-        <LikeProvider>
+      <body className={`${shrikhand.variable}`}>
           <div className={styles.page}>
           <Header />
           <main className={styles.mainContent}>
-            <div className={styles.contentWrapper}>
-              {children}
-            </div>
+            <LikeProvider>
+              <div className={styles.contentWrapper}>
+                {children}
+              </div>
+            </LikeProvider>
           </main>
           <footer className={styles.footer}>
             <nav>
@@ -60,7 +51,6 @@ export default function RootLayout({ children }) {
             </Link>
           </footer>
         </div>
-        </LikeProvider>
       </body>
     </html>
   );
