@@ -6,7 +6,7 @@ export default function MenuItem({ item, index }) {
   return (
     <div className="menuItem" data-index={index}>
       <div className="menuItemContent">
-        <h4>{item.nom}</h4>
+        <h2>{item.nom}</h2>
         <p>{item.description}</p>
       </div>
       <span className="price">{item.prix}</span>
