@@ -18,8 +18,6 @@ export default async function Restaurant({params}) {
     }
 
     return (
-        <>
-            <RestaurantDetails {...restaurant}/>
-        </>
+        <RestaurantDetails {...restaurant}/>
     )
 }
