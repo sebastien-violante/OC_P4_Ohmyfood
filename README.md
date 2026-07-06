@@ -1,5 +1,5 @@
 # Ohmyfood Next.js
-![Logo](https://raw.githubusercontent.com/user/repo/main/public/images/screens/oc_p4_ohmyfood_screen1.png)
+![Page d'accueil de OhMyFood](https://raw.githubusercontent.com/sebastien-violante/OC_P4_Phmyfood/main/public/images/screens/oc_p4_ohmyfood_screen1.png)
 
 Starting project for Ohmyfood. 
 
